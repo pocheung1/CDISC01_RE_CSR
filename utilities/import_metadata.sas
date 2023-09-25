@@ -32,7 +32,7 @@
 
 * Convert Display sheet of xlsx to sas7bdat;
 proc import out = tfl
-			datafile = "/mnt/pvc-rev4-nfs/TFL_Metadata.xlsx"
+			datafile = "/mnt/metadata-repository/TFL_Metadata.xlsx"
 			dbms = xlsx replace;
 	sheet = "Display";
 	getnames = YES;
