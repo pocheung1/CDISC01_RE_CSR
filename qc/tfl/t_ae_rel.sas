@@ -20,7 +20,7 @@
 *               
 * Macros:       tfl_metadata.sas
 *         
-* Assumptions: 
+* Assumptions: test
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY       
