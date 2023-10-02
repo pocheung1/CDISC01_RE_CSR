@@ -7,20 +7,20 @@
 * ____________________________________________________________________________
 * Sponsor              : Domino
 * Study                : CDISC01
-* Program              : t_ae_rel.sas
-* Purpose              : Create the Treatment Emergent Adverse Events Table
+* Program              : qc_t_ae_rel.sas
+* Purpose              : Create the QC Treatment Emergent Adverse Events Table
 * ____________________________________________________________________________
 * DESCRIPTION                                                    
 *                                                                   
 * Input files: ADaM.ADSL
 *			   ADaM.ADAE
 *              
-* Output files: t_ae_rel.pdf
+* Output files: qc_t_ae_rel.pdf
 *				t_ae_rel.sas7bdat
 *               
-* Macros:       tfl_metadata.sas
+* Macros:       None
 *         
-* Assumptions:
+* Assumptions: 
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY       
@@ -316,12 +316,9 @@ data final (drop = i);
 	soc_pt_disp = tranwrd(soc_pt_disp, "Teae", "TEAE");
 run;
 
-*include metadata;
-%tfl_metadata;
-
 ** create the table output;
 
-ods pdf file = "/mnt/artifacts/TFL/&__prog_name..pdf"
+ods pdf file = "/mnt/artifacts/results/qc_t_ae_rel.pdf"
 		style = newstyle;
         
 ods noproctitle;
@@ -329,14 +326,14 @@ ods escapechar = "^";
 
 ** add titles to output;
 title1 justify = left "Domino" justify = right "Page ^{thispage} of ^{lastpage}";
-title2 "&DisplayName.";
-title3 "&DisplayTitle.";
-title4 "&Title1.";
+title2 "Table 14.3.4.2";
+title3 "Summary of Treatment-Emergent Adverse events by System Organ Class, Preferred term and relationship to study treatment";
+title4 "Analysis Set";
 
 ** justify contents to decimal places;
 proc report data = final headline split = "*" 
 			style(report) = {width = 100%} 
-			out = tfl.&__prog_name.;
+			out = tflqc.t_ae_rel;
         column  aesoc
                    aedecod
                    indent soc_pt_disp &byvar trt_99_npp;
@@ -360,12 +357,11 @@ proc report data = final headline split = "*"
         endcomp;
 
         ** add footnotes;
-        footnote1 justify = left "&Footer1.";
-		footnote2 justify = left "&Footer2.";
-		footnote3 justify = left "&Footer3.";
-		footnote4 justify = left "&Footer4.";
-		footnote5 justify = left "&Footer5.";
+        footnote1 justify = left "Treatment-emergent events are defined as adverse events following the first administration of the intervention that is either new or a worsening of an existing AE.";
+		footnote2 justify = left "Adverse Events are coded using MedDRA version xx.x.";
+		footnote3 justify = left "Percentages are based on the number of subjects in the safety population within each treatment group." ;
+		footnote4 justify = left "TEAE= Treatment-Emergent Adverse Event, MedDRA= Medical Dictionary for Regulatory Activities." ;
+        footnote5 justify = left "Dataset(s): ADAE; Program: qc_t_ae_rel.sas; Output: qc_t_ae_rel.pdf; Generated on: &sysdate9 &systime";
 run;
     
 ods pdf close;
-
