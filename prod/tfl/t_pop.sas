@@ -19,7 +19,7 @@
 *               
 * Macros:       tfl_metadata.sas
 *         
-* Assumptions: 
+* Assumptions: ROSS 
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                   
