@@ -12,7 +12,7 @@ The global `domino.sas` autoexec progam is also included in the repository to ap
 
 ```
 repo
-│   domino.sas
+├───Pipelines
 ├───prod
 │   ├───adam
 │   └───tfl
@@ -21,7 +21,9 @@ repo
 │   │       compare.sas
 │   └───tfl
 └───share
-    └───macros
+│   └───macros
+└───utilities
+│   domino.sas
 ```
 
 # Naming convention
