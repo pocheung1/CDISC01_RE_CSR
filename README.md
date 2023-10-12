@@ -18,7 +18,7 @@ repo
 │   └───tfl
 ├───qc
 │   ├───adam
-│   │       compare.sas
+│   │       compare_adam.sas
 │   └───tfl
 │───share
 │   └───macros
@@ -32,7 +32,7 @@ The programs follow a typical clinical trial naming convention, where the ADaM p
 
 # QC programming and reporting
 
-The QC programming is all in SAS, and there is a `compare.sas` program which uses SAS PROC COMPARE to create a summary report of all differences between the prod and qc datasets. This program also generates the `dominostats.json` files which Domino uses to display a dashboard in the jobs screen.
+The QC programming is all in SAS, and there is a `compare_adam.sas` program which uses SAS PROC COMPARE to create a summary report of all differences between the prod and qc datasets. This program also generates the `dominostats.json` files which Domino uses to display a dashboard in the jobs screen.
 
 # Support
 
