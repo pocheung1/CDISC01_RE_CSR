@@ -19,7 +19,7 @@
 *               
 * Macros:       None
 *         
-* Assumptions: EDIT EDIT
+* Assumptions: EDIT
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                   
