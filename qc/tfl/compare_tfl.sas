@@ -18,7 +18,7 @@
 *               
 * Macros:       s_compare
 *         
-* Assumptions: 
+* Assumptions: DEMO Comment
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                                         
