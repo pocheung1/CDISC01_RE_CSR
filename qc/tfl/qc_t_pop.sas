@@ -19,7 +19,7 @@
 *               
 * Macros:       None
 *         
-* Assumptions: EDIT
+* Assumptions: DEMO PURPOSES
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                   
