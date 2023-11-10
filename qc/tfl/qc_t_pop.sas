@@ -19,7 +19,7 @@
 *               
 * Macros:       None
 *         
-* Assumptions: EDIT
+* Assumptions: DEMO PURPOSES 20231110
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                   

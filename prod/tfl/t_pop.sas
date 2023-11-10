@@ -19,12 +19,11 @@
 *               
 * Macros:       tfl_metadata.sas
 *         
-* Assumptions: 
+* Assumptions: This is a DEMO 20231110
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                   
-*  10MAY2023  	  | Megan Harries  | Original
-*  09NOVEMBER2023 | Petter Olsson  | Demo
+*  10MAY2023  | Megan Harries  | Original
 * ----------------------------------------------------------------------------
 \*****************************************************************************/
 
