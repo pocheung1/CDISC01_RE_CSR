@@ -23,6 +23,7 @@
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                                         
 *  08JUN2022   | Jake Tombeur   | Original version
+*  12DEC2023   | Petter Olsson  | Updated version 
 \*****************************************************************************/
 
 %let _STUDYID = CDISC01;
@@ -32,7 +33,7 @@
 %include "!DOMINO_WORKING_DIR/domino.sas";
 *********;
 
-%xpt2loc(filespec='/mnt/data/ADAM/adsl.xpt');
+/*%xpt2loc(filespec='/mnt/data/ADAM/adsl.xpt');*/
 
 data adam.adsl;
 	set adsl;
