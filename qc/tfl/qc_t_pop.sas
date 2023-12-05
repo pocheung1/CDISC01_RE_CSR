@@ -19,7 +19,7 @@
 *               
 * Macros:       None
 *         
-* Assumptions: 
+* Assumptions: Here is my comment
 *
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                   
