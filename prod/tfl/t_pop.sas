@@ -24,9 +24,12 @@
 * ____________________________________________________________________________
 * PROGRAM HISTORY                                   
 *  10MAY2023  | Megan Harries  | Original
-*  08DEC2023  | Petter Olsson  | Demo Comment Made
+*  08DEC2023  | Petter Olsson  | Added DEBUG logging
 * ----------------------------------------------------------------------------
 \*****************************************************************************/
+
+/* Debug logging*/
+options mprint mlogic;
 
 *********;
 ** Setup environment including libraries for this reporting effort;
