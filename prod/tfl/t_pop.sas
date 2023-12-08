@@ -82,7 +82,7 @@ run ;
 options orientation = landscape nonumber nodate nobyline;
 
 ** adsl and include required variables for table;
-data adsl_all (rename = (actarm = trta));
+data adsl_all (rename = (actarm = trta_new));
 	length trtan agen sexn 8.;
 	set adam.adsl;
 	
