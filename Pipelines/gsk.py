@@ -13,63 +13,63 @@ SAS_ENVIRONMENT_ID = "657b1d33162ea841ff16d31e"
 
 
 @task
-def ADSL() -> None:
-    execute_task("prod/adam/ADSL.sas")
+def ADSL() -> str:
+    return execute_task("prod/adam/ADSL.sas")
 
 
 @task
-def ADAE() -> None:
-    execute_task("prod/adam/ADAE.sas")
+def ADAE() -> str:
+    return execute_task("prod/adam/ADAE.sas")
 
 
 @task
-def ADCM() -> None:
-    execute_task("prod/adam/ADCM.sas")
+def ADCM() -> str:
+    return execute_task("prod/adam/ADCM.sas")
 
 
 @task
-def ADLB() -> None:
-    execute_task("prod/adam/ADLB.sas")
+def ADLB() -> str:
+    return execute_task("prod/adam/ADLB.sas")
 
 
 @task
-def ADMH() -> None:
-    execute_task("prod/adam/ADMH.sas")
+def ADMH() -> str:
+    return execute_task("prod/adam/ADMH.sas")
 
 
 @task
-def ADVS() -> None:
-    execute_task("prod/adam/ADVS.sas")
+def ADVS() -> str:
+    return execute_task("prod/adam/ADVS.sas")
 
 
 @task
-def t_vscat() -> None:
-    execute_task("prod/tfl/t_vscat.sas")
+def t_vscat() -> str:
+    return execute_task("prod/tfl/t_vscat.sas")
 
 
 @task
-def qc_ADSL() -> None:
-    execute_task("qc/adam/qc_ADSL.sas")
+def qc_ADSL() -> str:
+    return execute_task("qc/adam/qc_ADSL.sas")
 
 
 @task
-def qc_ADAE() -> None:
-    execute_task("qc/adam/qc_ADAE.sas")
+def qc_ADAE() -> str:
+    return execute_task("qc/adam/qc_ADAE.sas")
 
 
 @task
-def qc_ADCM() -> None:
-    execute_task("qc/adam/qc_ADCM.sas")
+def qc_ADCM() -> str:
+    return execute_task("qc/adam/qc_ADCM.sas")
 
 
 @task
-def qc_ADMH() -> None:
-    execute_task("qc/adam/qc_ADMH.sas")
+def qc_ADMH() -> str:
+    return execute_task("qc/adam/qc_ADMH.sas")
 
 
 @task
-def qc_ADVS() -> None:
-    execute_task("qc/adam/qc_ADVS.sas")
+def qc_ADVS() -> str:
+    return execute_task("qc/adam/qc_ADVS.sas")
 
 
 @workflow
@@ -107,7 +107,9 @@ def gsk() -> None:
 def execute_task(command):
     job_info = submit_task(command)
     job_id = job_info['job']['id']
-    wait_for_job_completion(job_id)
+    job_status = wait_for_job_completion(job_id)
+
+    return job_status
 
 
 def submit_task(command):
@@ -128,7 +130,7 @@ def wait_for_job_completion(job_id):
     while True:
         job_status = get_job_status(job_id)
         if job_status in ("Succeeded", "Stopped", "Failed", "Error"):
-            break;
+            return job_status;
         time.sleep(1)
 
 
